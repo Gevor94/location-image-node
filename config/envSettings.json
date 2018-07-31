@@ -1,0 +1,10 @@
+{
+  "env": "development",
+  "port": 3003,
+  "db": {
+    "host": "localhost",
+    "collection": "images",
+    "user": "user",
+    "password": "pwd"
+  }
+}
