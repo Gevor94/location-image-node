@@ -40,6 +40,7 @@ The following APIs are exposed by the service:
 
 * Ensure the service is installed and configured.
 * Ensure the MongoDB is running.
+* Ensure MongoDB have database "images".
 * Run the following in command line:
     * npm start
 
