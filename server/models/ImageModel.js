@@ -23,9 +23,9 @@ ImageSchema.statics.getAllImages = function (owner) {
         });
 };
 
-ImageSchema.statics.addImage = function (params, file, owner) {
+ImageSchema.statics.addImage = function (params, file) {
     const fileInfo = {
-        owner: owner,
+        owner: params.user,
         name: file.filename,
         date: Date.now(),
         location: params.location

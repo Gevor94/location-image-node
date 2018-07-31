@@ -10,7 +10,7 @@ const getAllImages = (req, res) => {
 };
 
 const addImage = (req, res) => {
-    ImageModel.addImage(req.body, req.file, req.query.user)
+    ImageModel.addImage(req.body, req.file)
         .then(result => handleResponse(res)(null, result, 200))
         .catch(error => handleResponse(res)(error, null, 400));
 };

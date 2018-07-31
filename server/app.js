@@ -15,7 +15,7 @@ const config = require('../config');
 const PORT = require('../config').port;
 const port = process.env.PORT || PORT;
 
-mongoose.connect(`mongodb://${config.db.user}:${config.db.password}@${config.db.host}/${config.db.collection}`);
+mongoose.connect(`mongodb://${config.db.host}/${config.db.collection}`);
 const db = mongoose.connection;
 db.on('error', function (err) {
     console.error('MongoDB: There was a db connection error');
@@ -35,11 +35,8 @@ app.use(cookieParser());
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Credentials", "true");
-    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Cache-Control, Access-Control-Request-Method, Access-Control-Allow-Headers, Access-Control-Request-Headers, X-Requested-With, Origin,Accept");
-    //", " +
-    // ", , , , " +
-    // ", ");
+    res.header("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS, POST, PUT");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
     next();
 });
 
